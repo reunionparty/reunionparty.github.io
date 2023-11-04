@@ -5,7 +5,7 @@
   </head>
   <body>
     <img src="./img/Logo.PNG" alt="" />
-    <video controls autoplay onended="redirectToLink()">
+    <video id="vid" controls autoplay onended="redirectToLink()">
       <source src="vid/video.mp4" type="video/mp4" />
       Il tuo browser non supporta la riproduzione di video.
     </video>
@@ -39,5 +39,21 @@
         }
       }
     </style>
+    <script>
+      const video = document.getElementById("vid");
+
+      function playFullscreen() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+          video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      }
+      video.onloadedmetadata = playFullscreen;
+    </script>
   </body>
 </html>
