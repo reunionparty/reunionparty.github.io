@@ -2,15 +2,42 @@
 <html>
   <head>
     <title>Reunion | Post</title>
-    <meta
-      http-equiv="refresh"
-      content="5;url=https://instagram.com/_reunionparty_?igshid=NTc4MTIwNjQ2YQ=="
-    />
   </head>
   <body>
-    <video controls autoplay>
-      <source src="./vid/video.mp4" type="video/mp4" />
+    <img src="./img/Logo.PNG" alt="" />
+    <video controls autoplay onended="redirectToLink()">
+      <source src="vid/video.mp4" type="video/mp4" />
       Il tuo browser non supporta la riproduzione di video.
     </video>
+    <img src="./img/Logo.PNG" alt="" />
+
+    <script>
+      function redirectToLink() {
+        window.location.href =
+          "https://instagram.com/_reunionparty_?igshid=NTc4MTIwNjQ2YQ==";
+      }
+    </script>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        margin: 0;
+      }
+      video {
+        height: 100%;
+        max-height: fit-content;
+      }
+      img {
+        width: 20%;
+        display: flex;
+      }
+      @media (max-width: 1450px) {
+        img {
+          display: none;
+        }
+      }
+    </style>
   </body>
 </html>
